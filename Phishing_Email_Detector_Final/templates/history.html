@@ -1,0 +1,56 @@
+<!--Refrences-->
+<!--HTML Tables: https://www.w3schools.com/html/html_tables.asp-->
+<!--HTML CellSpacing and CellPadding: https://www.w3schools.com/html/html_table_padding_spacing.asp-->
+<!--HTML TBorders: https://www.w3schools.com/html/html_table_borders.asp-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--Created a title to be displayed within the webbrowser-->
+    <title>Prediction History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/history.css') }}">
+</head>
+<body>
+    <!--Created a header to be displayed on the webpage-->
+    <h1>Prediction History</h1>
+
+    <!-- Created a Back to Detector button once cliked redirects back to the Phishing Email Detector web application -->
+    <form method="GET" action="{{ url_for('detector.index') }}">
+        <button type="submit" class="back-button">← Back to Detector</button>
+    </form>
+
+    <!--Checks if exsisting records are stored within the records database-->
+    {% if records and records|length > 0 %}
+        <!--Created a table which will display the users records in which borders, spacing, and padding were applied -->
+        <table border="1" cellspacing="0" cellpadding="8">
+            <!--Table head which defines the columns of the corresponding table to be displayed to the user-->
+            <thead>
+                <tr>
+                    <th>Email Text</th>
+                    <th>Prediction</th>
+                    <th>Phishing Confidence (%)</th>
+                    <th>Legitimate Confidence (%)</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <!--Created a table body which display the record information stored in the records database-->
+            <tbody>
+                <!--Iterates through each of the records and displays the record information based on the corresponding indexes-->
+                {% for record in records %}
+                <tr>
+                    <td style="max-width: 300px; word-wrap: break-word;">{{ record[0] }}</td>
+                    <td>{{ record[1] }}</td>
+                    <td>{{ record[3] if record[3] is not none else 'N/A' }}</td>
+                    <td>{{ record[2] if record[2] is not none else 'N/A' }}</td>
+                    <td>{{ record[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    <!--If the records do not exist print out to the webpage "No prediction history found"-->
+    {% else %}
+        <p>No prediction history found.</p>
+    {% endif %}
+</body>
+</html>
+

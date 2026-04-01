@@ -1,0 +1,57 @@
+
+body{
+    font-family: 'Times New Roman', Times, serif;  /*Having the font be Times New Roman*/
+    font-size: 20px;                               /*Setting the font size*/
+    margin: 40px;                                  /*Setting the margin size*/
+    background: #30b5d9;                        /*Having light blue background*/
+}
+
+h1{
+    width: 30%;                             
+    text-align: center;                         /* Center the header text horizontally */
+    margin: 20px auto;                          /* Add spacing & center the block horizontally */
+    font-weight: bold;                          /* Make the text bold */  
+    color:#fff;                               /* Having White colored text for readability */
+    background-color: darkred;                /* Having the header have a dark red background color */
+    border: none;                               /* Remove default border */
+    border-radius: 10px;                        /* Adding rounded borders */
+    box-shadow: 0px 4px 8px rgba(224, 108, 108, 0.3); /* Adding box shadow */
+}
+
+button {    
+    display: block;                         /* Make button a block element */
+    margin: 20px auto;                      /* Center button & add spacing */
+    padding: 12px 24px;                     /*Having Inner spacing*/
+    font-size: 20px;                        /*Having a larger text size*/
+    font-weight: bold;                      /* Bold text */
+    color: #fff;                          /*Using white colored text for readability*/
+    background-color: red;                /* Red background */
+    border: none;                           /* Removing default borders */
+    border-radius: 10px;                    /* Added rounded borders */
+    cursor: pointer;                        /* Added a pointer to make the button clickable */
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);    /*Adding subtle sahdow to the button*/
+    transition: all 0.3s ease;                    /*Handles transitions when the button is hovered over by the cursor */
+}
+
+form {
+    display: flex;              /* Use flexbox layout */
+    flex-direction: column;    /* Arrange items vertically */
+    align-items: center;      /* center the inputs inside the form */
+    background: white;      /* Having white colored text for readability */
+    padding: 2rem;            /* Add slight inner spacing */
+    border-radius: 10px;      /* Adding rounded borders*/
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Add subtle shadow*/
+}
+
+input, button {
+    width: 250px;                /* Set consistent width */
+    padding: 10px;              /* Inner spacing */
+    margin: 8px 0;              /* Space between elements */
+    border: 1px solid #ccc;   /* Light gray border */
+    border-radius: 5px;         /* Slightly rounded corners */
+}
+
+
+button:hover {
+    background: green;      /* Change background to green on hover */
+}

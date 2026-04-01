@@ -1,0 +1,56 @@
+<!--Intializing the HTML type -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Created a title for the HTML Webpage-->
+    <title>Phishing Email Detector</title>
+    <!--Linked the main.css static file to the HTML template-->
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/detector.css') }}">
+</head>
+<body>
+    <!--Created the header of the webpage-->
+    <h1>Phishing Email Detector</h1>
+    <!--Utilizing the POST Method which will take and preformed the action based on the users email text-->
+    <form method="POST" action="{{ url_for('detector.index') }}">
+        <!--Created a label which will appear on the webpage prompting the user to enter the email text to be checked-->
+        <label>Paste the email text you would like to check:</label>
+        <!--The textarea name fucntion represents the textbox which the user will input their email text for checking-->
+        <textarea name="email_text" required>{{ email_text }}</textarea><br><br>
+        <!--Created a Check Email button when clicked will present to the user the results-->
+        <button type="submit" name="action" value="check">Check Email</button>
+        <!--Created the clear button to clear the email text and results-->
+        <button type="submit" name="action" value="clear">Clear</button>
+    </form>
+
+    <form method="GET" action="{{ url_for('detector.history') }}">
+        <button type="submit" class="history-button">View History</button>
+    </form>
+
+     <!--Created the Logout button which once cliked would logout the user from the Phishing Email Detector and redirect back to the Login page--> 
+    <form method="POST" action="{{url_for('authentication.logout')}}">
+        <button type="submit" class="logout-button">Logout</button>
+    </form>
+    
+
+    <!--Checking for the prediction to be made-->
+    {% if prediction %}
+    <!--Created a result class which handles the result outputs for both the prediction and confidence scores-->
+    <div class="result">
+        <!--Labels Prints out the Prediction text to the webpage-->
+        <strong>Prediction:</strong> {{ prediction }}<br><br>
+        <!--Prints out the Confidence Score to the webpage-->
+        <strong>Confidence Score: </strong><br><br>
+        <!--Handles displaying the Phishing confidence score on the web application-->
+        <span class="confidencescore-phishing">
+            <strong>Phishing:</strong> {{ phishing_confidence if phishing_confidence is not none else 'N/A' }}%
+        </span>
+        <br><br>
+        <!--Handles displaying the Legitimate Confidence Score percentage on the web application-->
+        <span class="confidencescore-legitimate">
+            <strong>Legitimate:</strong> {{ legitimate_confidence if legitimate_confidence is not none else 'N/A' }}%
+        </span>
+        <br>
+    </div>
+    {% endif %}
+</body>
+</html>

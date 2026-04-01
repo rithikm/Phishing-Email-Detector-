@@ -1,0 +1,71 @@
+body {
+    font-family: 'Times New Roman', Times, serif; /*Having the font be Times New Roman*/
+    margin: 20px;                                 /*Having the margin size be 20*/
+    background: #f8f9fa;                        /*Having a white background*/
+}
+
+h1 {
+    color: #333;                                /*Having the header text be in a black color*/
+    text-align: center;                           /*Aligining the header to the center of the webpage*/
+}
+
+table {
+    width: 100%;                                   /*Having the table take up the entire width of the webpage*/
+    border-collapse: collapse;                     /* Removes default spacing between table cells */
+    margin-top: 20px;                              /* Adds spacing above the table */
+    background: white;                          /* White background for contrast */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);      /*Adding subtle shadow to give the table a boxier appearance*/
+}
+
+th {    
+    background: #007bff;                   /*Primary blue color for headers*/
+    color: white;                         /* White text for contrast and readability */
+    text-align: left;                       /* Aligns header text to the left */
+}
+
+td, th {
+    padding: 10px;                         /* Adds spacing inside cells */
+    border: 1px solid #ddd;             /* Light gray border for cell separation */
+}
+
+tr:nth-child(even) {                
+    background: #f2f2f2;                /*Adding striping for better readability*/
+}
+
+a {
+    color: #007bff;                 /* Blue links consistent with header color */
+    text-decoration: none;            /* Removes underline by default */
+    font-size: 14px;                  /* Sets consistent link size */
+}
+
+a:hover {
+    text-decoration: underline; /* Adds underline when hovered */
+}
+
+button {
+    margin-top: 20px;          /* Adds spacing above the button */
+    padding: 10px 20px;        
+    background: #dc3545;     
+    color: white;           /* White text for readability */
+    border: none;             /* Removes default border */
+    cursor: pointer;          /*Utuilizing the cursor to make the button clickable*/
+    border-radius: 4px;       /* Slightly rounded corners */
+}
+
+button:hover {
+    background: #c82333;    /* Darker red on when the cursor hovers over the button */
+}
+
+.back-button {
+    margin-bottom: 20px;        /*Add spacing below the Back to Detector button*/
+    padding: 10px 20px;         /*Utilizes the same padding as a normal button*/
+    background: #28a745;      /*Changes the button color to green*/
+    color: white;             /*Having white text for readability*/
+    border: none;               /*Removes borders around the Back to Detector button*/
+    border-radius: 4px;         /*Added Rounded corners around the button*/
+    cursor: pointer;            /*Utuilizing the cursor to make the button clickable*/
+}
+
+.back-button:hover {
+    background: #218838;    /* Darker green on hover */
+}

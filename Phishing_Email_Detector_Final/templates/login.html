@@ -1,0 +1,28 @@
+<!--Specified the HTML file-->
+<!DOCTYPE html>
+<!--Specified the language the HTML file would use-->
+<html lang="en">
+<head>
+    <!--Created a title for the HTML file-->
+    <title>Login</title>
+    <!--Linking the specified CSS file which will handle the appeal of the Login webpage of the application-->
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/login.css') }}">
+</head>
+<body>
+    <!--Created a header for the Login in webpage-->
+    <h1>Login</h1>
+    <form method="POST" action="{{ url_for('authentication.login') }}">
+        <!--Takes in the users email-->
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+        <!--Takes in the users password-->
+        <label>Password:</label><br>
+        <input type="password" name="password" required><br><br>
+        <!--Created a login in button which once clicked gives the user access to the Phishing Email Detector application-->
+        <button type="submit">Login</button>
+    </form>
+    <br>
+    <!--Routes the user to the Create Account page if they don't already have an active account-->
+    <p style="text-align: center;">Don’t have an account? <a href="{{ url_for('authentication.create_user') }}">Create Account</a></p>
+</body>
+</html>

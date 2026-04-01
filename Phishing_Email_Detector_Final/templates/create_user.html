@@ -1,0 +1,34 @@
+<!--Specfied the specific type of document-->
+<!DOCTYPE html>
+<!--Specified the type of language the document is suppose to be-->
+<html lang="en">
+<head>
+    <!--Created the title of the create_user authentication portion of the webpage-->
+    <title>Create User</title>
+    <!--Linking the specified CSS file which will handle the appeal and background of the webpage-->
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/create_user.css') }}">
+</head>
+<body>
+    <!--Created header for the webpage as Create Account-->
+    <h1>Create Account</h1>
+    <form method="POST" action="{{ url_for('authentication.create_user') }}">
+        <!--Taking in the user Firstname-->
+        <label>First Name:</label><br>
+        <input type="text" name="firstname" required><br><br>
+        <!--Taking in the user Lastname-->
+        <label>Last Name:</label><br>
+        <input type="text" name="lastname" required><br><br>
+        <label>Email:</label><br>
+        <!--Taking in the users email-->
+        <input type="email" name="email" required><br><br>
+        <label>Password:</label><br>
+        <!--Taking in the users password-->
+        <input type="password" name="password" required><br><br>
+        <!--Created a Create Account button-->
+        <button type="submit">Create Account</button>
+    </form>
+    <br>
+    <!--Redirects the user to the login page if the user already has an account-->
+    <p style="text-align: center;">Already have an account? <a href="{{ url_for('authentication.login') }}">Login</a></p>
+</body>
+</html>
