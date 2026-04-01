@@ -1,6 +1,6 @@
 # Phishing-Email-Detector-
 
-**Objective**
+<ins>**Objective**</ins>
 
 The Objective of the project is to develop a web-based tool that classifies emails as Phishing or
 Legitimate using Natural Language Processing and Machine Learning techniques. The final
