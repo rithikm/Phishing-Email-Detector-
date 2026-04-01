@@ -1,0 +1,93 @@
+/*
+    The following CSS code is for the background in which a teal color background was utilized. The text on all the background is at 20 and uses 
+    Times New Roman Font. This includes text such as the label to prompt the user to enter the email text. 
+*/
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin: 40px;
+    background: #30b5d9; /* Light blue background */
+}
+
+/*
+    FThe following CSS code is for the textbox in which the user will input the email text in which the width is 100% and the width 
+    is 150px which creates a large textbox which takes the width of the entire webpage. 
+*/
+
+textarea{
+    width: 100%;
+    height: 150px;
+}
+
+/*
+    The CSS code is for the Check Email button. It ensures the button is placed in the center of the webpage. In addition 
+    the text is bolded out for the user to easily see and also preforms a hover transition when the curosr hovers over the button by 
+    changing the cursor to a pointer.  
+*/
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background-color: red;  
+    border: none;
+    border-radius: 10px;         
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;   
+}
+
+/*
+    For the results section the following creates a box around the  results section adding background color and a border around it \
+    to make it stand out on the webpage and ensures it is placed at the center on the webpage. 
+*/
+
+.result{
+    width: 30%;              /* make it smaller, e.g. 60% of page width */
+    text-align: center;
+    margin: 20px auto;
+    font-size: 20px;
+    font-weight: bold;
+    color:#0a0000;
+    background-color: #fff;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3); /* Subtle shadow */
+}
+
+.confidencescore-phishing {
+    color: red;
+}
+
+.confidencescore-legitimate {
+    color: darkgreen;
+}
+
+/*
+    For the header the following creates a box around the header text adding background color and a border around it \
+    to make it stand out on the webpage and ensures it is placed at the center on the webpage. 
+*/
+
+h1{
+    width: 30%;
+    text-align: center;
+    margin: 20px auto;
+    font-weight: bold;
+    color:#fff;
+    background-color: darkred;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(224, 108, 108, 0.3); /* Subtle shadow */
+}
+
+/*
+    Added background color and placed the Clear button to the center of the webpage 
+*/
+button[type="button"] {
+    background-color: gray;
+    margin-top: 10px;
+}
